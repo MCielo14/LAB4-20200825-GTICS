@@ -50,4 +50,10 @@ public class PrincipalControler {
         return "list";
     }
 
+    @PostMapping("/updateOnlyPhone")
+    public String updateOnlyPhone(Employee employee) {
+        empleadoRepository.actualizarTelefonosalario(employee.getPhoneNumber(),employee.getSalary(),employee.getId());
+        return "redirect:/list";
+    }
+
 }
